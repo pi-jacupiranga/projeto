@@ -42,8 +42,9 @@
             <div class="form-group">
                 <label for="setor">Escolha o setor</label>
                 <select name="setor_id" class="form-control" id="setor_id">
-                    <option value="1">Setor 1</option>
-                    <option value="2">Setor 2</option>
+                    @foreach ($setores as $setor)
+                        <option value="{{ $setor->setor_id }}">{{ $setor->setor_nome }}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="form-group">
