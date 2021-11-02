@@ -270,6 +270,12 @@ return [
             'icon' => '',
             'can' => 'is-admin'
         ],
+        [
+            'text' => 'Setores',
+            'url'  => 'dashboard/setores',
+            'icon' => '',
+            'can' => 'is-admin'
+        ],
         // [
         //     'text'    => 'multilevel',
         //     'icon'    => 'fas fa-fw fa-share',

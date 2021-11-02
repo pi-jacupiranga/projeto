@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SetorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,5 @@ Route::get('/dashboard/users/add', [HomeController::class, 'addUserPage']);
 Route::post('/dashboard/users/add/do', [HomeController::class, 'addUser']); 
 
 Route::get('/dashboard/setores', [SetorController::class, 'setorPage']);
+
+Route::get('/dashboard/setores/add', [SetorController::class, 'addSetor']);
