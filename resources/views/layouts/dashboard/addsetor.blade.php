@@ -24,7 +24,7 @@
                 <select name="setor_funcionario_responsavel_id" id="setor_funcionario_responsavel_id" class="form-control">
                     <option value="0">Nenhum</option>
                     @foreach ($users as $user)
-                        <option value="{{ $user->id }}">{{ $user->name }}</option>
+                        <option value="{{ $user->id }}">{{ $user->name }} {{ $user->surname }}</option>
                     @endforeach
                 </select>
             </div>
