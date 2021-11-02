@@ -7,8 +7,19 @@
 @stop
 
 @section('content')
-    <p>Usuários</p>
-    <a href="./users/add">Adicionar um novo usuário</a>
+    
+    @can('is-admin')
+      
+        <h1>Usuários</h1>
+        <a href="./users/add">Adicionar um novo usuário</a>
+    
+    @else
+        
+        <p>Você não possui acesso a área que tentou acessar.</p>    
+        <a href="./">Voltar</a>
+
+    @endcan
+
 @stop
 
 @section('css')

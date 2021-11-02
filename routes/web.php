@@ -15,35 +15,18 @@ use App\Http\Controllers\HomeController;
 |
 */
 
+Auth::routes(['register' => false]);
+
 Route::get('/', function () {
+    if(Auth::check() == true){
+        return redirect('/dashboard');
+    }
     return view('welcome');
 });
 
-Auth::routes();
+// ROTAS DASHBOARD
 
 Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
-
-// ROTAS LOGIN
-
-// Route::get('login', function () {
-//     return view('layouts.login.index');
-// });
-
-// Route::post('login/auth', function (Request $request) {
-//     echo "veio aqui";
-// });
-
-// DESABILITA ROTAS /register /password/reset
-
-Route::get('/register', function () {
-    return redirect('/');
-});
-
-Route::get('/password/reset', function () {
-    return redirect('/');
-});
-
-// ROTAS DASHBOARD
 
 Route::get('/dashboard/users', [HomeController::class, 'userList']);
 

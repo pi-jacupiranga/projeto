@@ -191,7 +191,7 @@ return [
     'dashboard_url' => 'dashboard',
     'logout_url' => 'logout',
     'login_url' => 'login',
-    'register_url' => '',
+    'register_url' => false,
     'password_reset_url' => 'password/reset',
     'password_email_url' => 'password/email',
     'profile_url' => false,
@@ -268,6 +268,7 @@ return [
             'text' => 'Usuários',
             'url'  => 'dashboard/users',
             'icon' => '',
+            'can' => 'is-admin'
         ],
         // [
         //     'text'    => 'multilevel',
