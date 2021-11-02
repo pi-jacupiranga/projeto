@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\SetorController;
 
 /*
@@ -28,11 +29,11 @@ Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 
 // ROTAS DASHBOARD - USUARIOS
 
-Route::get('/dashboard/users', [HomeController::class, 'userList']);
+Route::get('/dashboard/users', [UserController::class, 'userList']);
 
-Route::get('/dashboard/users/add', [HomeController::class, 'addUserPage']);
+Route::get('/dashboard/users/add', [UserController::class, 'addUserPage']);
 
-Route::post('/dashboard/users/add/do', [HomeController::class, 'addUser']); 
+Route::post('/dashboard/users/add/do', [UserController::class, 'addUser']); 
 
 // ROTAS DASHBOARD - SETORES
 
