@@ -18,10 +18,7 @@ use App\Http\Controllers\HomeController;
 Auth::routes(['register' => false]);
 
 Route::get('/', function () {
-    if(Auth::check() == true){
-        return redirect('/dashboard');
-    }
-    return view('layouts.home.index');
+    return redirect('/dashboard');
 });
 
 // ROTAS DASHBOARD
@@ -33,3 +30,5 @@ Route::get('/dashboard/users', [HomeController::class, 'userList']);
 Route::get('/dashboard/users/add', [HomeController::class, 'addUserPage']);
 
 Route::post('/dashboard/users/add/do', [HomeController::class, 'addUser']); 
+
+Route::get('/dashboard/setores', [SetorController::class, 'setorPage']);
