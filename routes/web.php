@@ -22,9 +22,11 @@ Route::get('/', function () {
     return redirect('/dashboard');
 });
 
-// ROTAS DASHBOARD
+// ROTAS DASHBOARD - HOME
 
 Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+
+// ROTAS DASHBOARD - USUARIOS
 
 Route::get('/dashboard/users', [HomeController::class, 'userList']);
 
@@ -32,6 +34,10 @@ Route::get('/dashboard/users/add', [HomeController::class, 'addUserPage']);
 
 Route::post('/dashboard/users/add/do', [HomeController::class, 'addUser']); 
 
+// ROTAS DASHBOARD - SETORES
+
 Route::get('/dashboard/setores', [SetorController::class, 'setorPage']);
 
-Route::get('/dashboard/setores/add', [SetorController::class, 'addSetor']);
+Route::get('/dashboard/setores/add', [SetorController::class, 'addSetorPage']);
+
+Route::post('/dashboard/setor/add/do', [SetorController::class, 'addSetor']);
