@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-
 use App\Models\User;
 use App\Models\Setor;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class SetorController extends Controller
 {
@@ -14,7 +15,8 @@ class SetorController extends Controller
 
     public function setorPage(){
         if(Auth::user()->is_admin == 1){
-            return view('layouts.dashboard.setores');
+
+            return view('layouts.dashboard.setores', ['setores' => DB::table('setores')->paginate(10)]);
         }
         return view('layouts.dashboard.index', ['msg' => "Você não possui acesso a área que tentou acessar."]);
     }
