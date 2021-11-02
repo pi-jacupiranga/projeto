@@ -264,56 +264,45 @@ return [
         //     'url'  => 'admin/settings',
         //     'icon' => 'fas fa-fw fa-lock',
         // ],
+        
         [
-            'text' => 'Usuários',
-            'url'  => 'dashboard/users',
-            'icon' => '',
-            'can' => 'is-admin'
+            'text'    => 'Cadastros',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'Usuários',
+                    'url'  => '#',
+                    'icon' => false,
+                    'can' => 'is-admin',
+                    'submenu' => [
+                        [
+                            'text' => 'Listar usuários',
+                            'url'  => 'dashboard/users',
+                        ],
+                        [
+                            'text' => 'Adicionar usuários',
+                            'url'  => 'dashboard/users/add',
+                        ],
+                    ]
+                ],
+                [
+                    'text' => 'Setores',
+                    'url'  => '#',
+                    'icon' => '',
+                    'can' => 'is-admin',
+                    'submenu' => [
+                        [
+                            'text' => 'Listar setores',
+                            'url'  => 'dashboard/setores',
+                        ],
+                        [
+                            'text' => 'Adicionar setores',
+                            'url'  => 'dashboard/setores/add',
+                        ],
+                    ]
+                ],
+            ],
         ],
-        [
-            'text' => 'Setores',
-            'url'  => 'dashboard/setores',
-            'icon' => '',
-            'can' => 'is-admin'
-        ],
-        // [
-        //     'text'    => 'multilevel',
-        //     'icon'    => 'fas fa-fw fa-share',
-        //     'submenu' => [
-        //         [
-        //             'text' => 'level_one',
-        //             'url'  => '#',
-        //         ],
-        //         [
-        //             'text'    => 'level_one',
-        //             'url'     => '#',
-        //             'submenu' => [
-        //                 [
-        //                     'text' => 'level_two',
-        //                     'url'  => '#',
-        //                 ],
-        //                 [
-        //                     'text'    => 'level_two',
-        //                     'url'     => '#',
-        //                     'submenu' => [
-        //                         [
-        //                             'text' => 'level_three',
-        //                             'url'  => '#',
-        //                         ],
-        //                         [
-        //                             'text' => 'level_three',
-        //                             'url'  => '#',
-        //                         ],
-        //                     ],
-        //                 ],
-        //             ],
-        //         ],
-        //         [
-        //             'text' => 'level_one',
-        //             'url'  => '#',
-        //         ],
-        //     ],
-        // ],
         // ['header' => 'labels'],
         // [
         //     'text'       => 'important',

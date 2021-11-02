@@ -8,7 +8,7 @@
 
 @section('content')
     <h2>Setores</h2>
-    <a href="./setores/add">Adicionar um setor</a>
+
 @stop
 
 @section('css')

@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    <p>Bem-vindo {{Auth::user()->name}}</p>
+    <p>Bem-vindo(a) {{Auth::user()->name}}</p>
     
     @if(isset($msg))
         <p class="msg">{{$msg}}</p>

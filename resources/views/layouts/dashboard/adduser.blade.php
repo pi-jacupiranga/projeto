@@ -43,7 +43,7 @@
                 <label for="setor">Escolha o setor</label>
                 <select name="setor_id" class="form-control" id="setor_id">
                     @foreach ($setores as $setor)
-                        <option value="{{ $setor->setor_id }}">{{ $setor->setor_nome }}</option>
+                        <option value="{{ $setor->id }}">{{ $setor->setor_nome }}</option>
                     @endforeach
                 </select>
             </div>
