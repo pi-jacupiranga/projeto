@@ -21,7 +21,7 @@ Route::get('/', function () {
     if(Auth::check() == true){
         return redirect('/dashboard');
     }
-    return view('welcome');
+    return view('layouts.home.index');
 });
 
 // ROTAS DASHBOARD
