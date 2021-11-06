@@ -28,7 +28,7 @@
 
                 <tr>
                     <td>{{ $prateleira->prateleira_numero }}</td>
-                    <td> {{ $prateleira->prateleira_estante_id }} </td>
+                    <td> {{ $prateleira->prateleira_numero }} </td>
                     <td></td>
                 </tr>
                 

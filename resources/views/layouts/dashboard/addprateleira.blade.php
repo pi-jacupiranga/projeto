@@ -7,13 +7,6 @@
 @stop
 
 @section('content')
-
-    @foreach($estantes as $estante)
-    <p>Testando se pega o valor do id: {{$estante->id}} </p>
-    @endforeach
-
-
-
     <h2>Adicionar uma nova prateleira</h2>
     <form action="/dashboard/prateleiras/add/do" method="POST">
         @csrf
@@ -28,7 +21,7 @@
                 <label for="prateleira_estante_id">Estante:</label>
                 <select name="prateleira_estante_id" id="prateleira_estante_id" class="form-control">
                     @foreach ($estantes as $estante)
-                        <option value="{{$estante->id}}">{{ $estante->estante_numero }}</option>
+                        <option value="{{ $estante->id }}">{{ $estante->estante_numero }}</option>
                     @endforeach
                 </select>
             </div>

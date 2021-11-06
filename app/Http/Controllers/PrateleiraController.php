@@ -43,7 +43,7 @@ class PrateleiraController extends Controller
 
                 
                 $prateleira['prateleira_numero'] = $request->prateleira_numero;
-                $prateleira['prateleira_estante_id '] = $request->prateleira_estante_id;
+                $prateleira['prateleira_estante_id'] = $request->prateleira_estante_id;
 
 
 
