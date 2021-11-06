@@ -3,57 +3,56 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Models\Estante;
 use App\Models\Prateleira;
+use App\Models\Caixa;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
-class PrateleiraController extends Controller
+class CaixaController extends Controller
 {
-
-    public function prateleiraPage(){
+    public function caixaPage(){
         if(Auth::user()->is_admin == 1){
 
             //Passando para conseguir acessar tabela estante porque não tem foreign key
-            $estantes = Estante::all();
+            $prateleiras = Prateleira::all();
 
-           return view('layouts.dashboard.prateleiras', ['prateleiras' => DB::table('prateleiras')->paginate(10)],['estantes' => $estantes]);
+           return view('layouts.dashboard.caixas', ['caixas' => DB::table('caixas')->paginate(10)],['prateleiras' => $prateleiras]);
         }
         return view('layouts.dashboard.index', ['msg' => "Você não possui acesso a área que tentou acessar."]);
     }
 
-    public function addPrateleiraPage(){
+    public function addCaixaPage(){
         if(Auth::user()->is_admin == 1){
 
             $prateleiras = Prateleira::all();
-            $estantes = Estante::all();
+            $caixas = Caixa::all();
 
-            return view('layouts.dashboard.addprateleira', ['prateleiras' => $prateleiras],['estantes' => $estantes]);
+            return view('layouts.dashboard.addcaixa', ['caixas' => $caixas],['prateleiras' => $prateleiras]);
         }
         return view('layouts.dashboard.index', ['msg' => "Você não possui acesso a área que tentou acessar."]);
     }
 
 
-    public function addPrateleira(Request $request){
+    public function addCaixa(Request $request){
         if(Auth::user()->is_admin == 1){
             // VALIDA DADOS 
             // SE VALIDOS 
-                $prateleira = [];
+                $caixa = [];
 
 
                 
-                $prateleira['prateleira_numero'] = $request->prateleira_numero;
-                $prateleira['prateleira_estante_id'] = $request->prateleira_estante_id;
+                $caixa['caixa_numero'] = $request->caixa_numero;
+                $caixa['caixa_prateleira_id'] = $request->caixa_prateleira_id;
 
 
 
                 
-                if(Prateleira::create($prateleira)){
+                if(Caixa::create($caixa)){
                     // COM SUCESSO REDIRECIONA PARA LISTA DE ESTANTES
-                    return redirect('/dashboard/prateleiras');
+                    return redirect('/dashboard/caixas');
                 } else {
                     // CASO NÃO CONSIGA RETORNA MENSAGEM DE ERRO AO SALVAR NO BANCO DE DADOS
                 }

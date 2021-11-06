@@ -333,6 +333,22 @@ return [
                         ],
                     ]
                 ],
+                [
+                    'text' => 'Caixas',
+                    'url'  => '#',
+                    'icon' => '',
+                    'can' => 'is-admin',
+                    'submenu' => [
+                        [
+                            'text' => 'Listar caixas',
+                            'url'  => 'dashboard/caixas',
+                        ],
+                        [
+                            'text' => 'Adicionar caixas',
+                            'url'  => 'dashboard/caixas/add',
+                        ],
+                    ]
+                ],
             ],
         ],
         // ['header' => 'labels'],

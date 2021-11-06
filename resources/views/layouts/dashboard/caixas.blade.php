@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    <h2>Prateleira</h2>
+    <h2>Caixa</h2>
 
     <table class="table">
 
@@ -15,8 +15,7 @@
 
             <tr>
                 <th>Número</th>
-                <!-- Acho interessante mostrar a estante pois podem ter duas prateleiras número 1 por exemplo -->
-                <th>Estante<th>
+                <th>Prateleira<th>
                 <th>Ações</th>
             </tr>
 
@@ -24,14 +23,14 @@
 
         <tbody>
             
-            @foreach ($prateleiras as $prateleira)
+            @foreach ($caixas as $caixa)
 
                 <tr>
-                    <td>{{ $prateleira->prateleira_numero }}</td>
+                    <td>{{ $caixa->caixa_numero }}</td>
                     <td>
-                        @foreach ($estantes as $estante)
-                            @if($estante->id == $prateleira->prateleira_estante_id)
-                                {{ $estante->estante_numero }}
+                        @foreach ($prateleiras as $prateleira)
+                            @if($prateleira->id == $caixa->caixa_prateleira_id)
+                                {{ $prateleira->prateleira_numero }}
                             @endif
                         @endforeach
                     </td>
@@ -49,7 +48,7 @@
 
 {{-- Não entendi esse div 
     <div class="d-flex justify-content-center">
-        {{ $prateleiras->links() }}
+        {{ $caixas->links() }}
     </div>
 -->
 --}}

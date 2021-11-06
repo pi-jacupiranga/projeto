@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePrateleirasTable extends Migration
+class CreateCaixasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreatePrateleirasTable extends Migration
      */
     public function up()
     {
-        Schema::create('prateleiras', function (Blueprint $table) {
+        Schema::create('caixas', function (Blueprint $table) {
             $table->id();
-            $table->string('prateleira_numero');
-            $table->integer('prateleira_estante_id')->references('id')->on('estantes');
+            $table->string('caixa_numero');
+            $table->integer('caixa_prateleira_id')->references('id')->on('prateleira');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreatePrateleirasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('prateleiras');
+        Schema::dropIfExists('caixas');
     }
 }

@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\SetorController;
 use App\Http\Controllers\EstanteController;
 use App\Http\Controllers\PrateleiraController;
+use App\Http\Controllers\CaixaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,3 +61,11 @@ Route::get('/dashboard/prateleiras', [PrateleiraController::class, 'prateleiraPa
 Route::get('/dashboard/prateleiras/add', [PrateleiraController::class, 'addPrateleiraPage']);
 
 Route::post('/dashboard/prateleiras/add/do', [PrateleiraController::class, 'addPrateleira']);
+
+// ROTAS DASHBOARD - CAIXAS
+
+Route::get('/dashboard/caixas', [CaixaController::class, 'caixaPage']);
+
+Route::get('/dashboard/caixas/add', [CaixaController::class, 'addCaixaPage']);
+
+Route::post('/dashboard/caixas/add/do', [CaixaController::class, 'addCaixa']);
