@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    <p>Adicionar um novo usuário</p>
+    <h2>Adicionar um novo usuário</h2>
     <form action="/dashboard/users/add/do" method="POST">
         @csrf
         <div class="card-body">
@@ -55,7 +55,7 @@
                 </select>
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Adicionar usuário</button>
+                <button type="submit" class="btn btn-primary">Adicionar Usuário</button>
             </div>
         </div>
       </form>

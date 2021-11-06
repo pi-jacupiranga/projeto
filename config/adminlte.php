@@ -301,6 +301,38 @@ return [
                         ],
                     ]
                 ],
+                [
+                    'text' => 'Estantes',
+                    'url'  => '#',
+                    'icon' => '',
+                    'can' => 'is-admin',
+                    'submenu' => [
+                        [
+                            'text' => 'Listar estantes',
+                            'url'  => 'dashboard/estantes',
+                        ],
+                        [
+                            'text' => 'Adicionar estantes',
+                            'url'  => 'dashboard/estantes/add',
+                        ],
+                    ]
+                ],
+                [
+                    'text' => 'Prateleiras',
+                    'url'  => '#',
+                    'icon' => '',
+                    'can' => 'is-admin',
+                    'submenu' => [
+                        [
+                            'text' => 'Listar prateleiras',
+                            'url'  => 'dashboard/prateleiras',
+                        ],
+                        [
+                            'text' => 'Adicionar prateleiras',
+                            'url'  => 'dashboard/prateleiras/add',
+                        ],
+                    ]
+                ],
             ],
         ],
         // ['header' => 'labels'],

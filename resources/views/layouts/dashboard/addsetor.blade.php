@@ -29,7 +29,7 @@
                 </select>
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Adicionar setor</button>
+                <button type="submit" class="btn btn-primary">Adicionar Setor</button>
             </div>
         </div>
       </form>

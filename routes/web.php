@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SetorController;
+use App\Http\Controllers\EstanteController;
+use App\Http\Controllers\PrateleiraController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +44,19 @@ Route::get('/dashboard/setores', [SetorController::class, 'setorPage']);
 Route::get('/dashboard/setores/add', [SetorController::class, 'addSetorPage']);
 
 Route::post('/dashboard/setor/add/do', [SetorController::class, 'addSetor']);
+
+// ROTAS DASHBOARD - ESTANTE
+
+Route::get('/dashboard/estantes', [EstanteController::class, 'estantePage']);
+
+Route::get('/dashboard/estantes/add', [EstanteController::class, 'addEstantePage']);
+
+Route::post('/dashboard/estantes/add/do', [EstanteController::class, 'addEstante']);
+
+// ROTAS DASHBOARD - PRATELEIRAS
+
+Route::get('/dashboard/prateleiras', [PrateleiraController::class, 'prateleiraPage']);
+
+Route::get('/dashboard/prateleiras/add', [PrateleiraController::class, 'addPrateleiraPage']);
+
+Route::post('/dashboard/prateleiras/add/do', [PrateleiraController::class, 'addPrateleira']);
