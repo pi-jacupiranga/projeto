@@ -15,5 +15,9 @@ class Estante extends Model
         'estante_numero',
         
     ];
+
+    public function prateleiras(){
+        return $this->hasMany('App\Models\Prateleira');
+    }
     
 }

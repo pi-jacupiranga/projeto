@@ -17,4 +17,8 @@ class Caixa extends Model
         'caixa_prateleira_id',
     ];
 
+    public function prateleira(){
+        return  $this->belongsTo('App\Models\Prateleira','caixa_prateleira_id');
+    }
+
 }

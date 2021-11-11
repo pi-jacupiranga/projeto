@@ -16,6 +16,7 @@
             <tr>
                 <th>Número</th>
                 <th>Prateleira<th>
+                <th>Estante</th>
                 <th>Ações</th>
             </tr>
 
@@ -27,13 +28,8 @@
 
                 <tr>
                     <td>{{ $caixa->caixa_numero }}</td>
-                    <td>
-                        @foreach ($prateleiras as $prateleira)
-                            @if($prateleira->id == $caixa->caixa_prateleira_id)
-                                {{ $prateleira->prateleira_numero }}
-                            @endif
-                        @endforeach
-                    </td>
+                    <td>{{ $caixa->prateleira->prateleira_numero }}</td>
+                    <td>{{ $caixa->estante->estante_numero }}</td>
                     <td></td>
                 </tr>
                 

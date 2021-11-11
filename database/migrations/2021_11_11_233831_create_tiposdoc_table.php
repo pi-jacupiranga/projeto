@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCaixasTable extends Migration
+class CreateTiposdocTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateCaixasTable extends Migration
      */
     public function up()
     {
-        Schema::create('caixas', function (Blueprint $table) {
+        Schema::create('tiposdoc', function (Blueprint $table) {
             $table->id();
-            $table->string('caixa_numero');
-            $table->unsignedBigInteger('caixa_prateleira_id');
-            $table->foreign('caixa_prateleira_id')->references('id')->on('caixas');
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ class CreateCaixasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('caixas');
+        Schema::dropIfExists('tiposdoc');
     }
 }

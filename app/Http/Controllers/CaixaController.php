@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Prateleira;
 use App\Models\Caixa;
+use App\Models\Estante;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -16,10 +17,9 @@ class CaixaController extends Controller
     public function caixaPage(){
         if(Auth::user()->is_admin == 1){
 
-            //Passando para conseguir acessar tabela estante porque não tem foreign key
-            $prateleiras = Prateleira::all();
+            $caixas = Caixa::all();
 
-           return view('layouts.dashboard.caixas', ['caixas' => DB::table('caixas')->paginate(10)],['prateleiras' => $prateleiras]);
+            return view('layouts.dashboard.caixas', ['caixas' => $caixas]);
         }
         return view('layouts.dashboard.index', ['msg' => "Você não possui acesso a área que tentou acessar."]);
     }
@@ -29,8 +29,9 @@ class CaixaController extends Controller
 
             $prateleiras = Prateleira::all();
             $caixas = Caixa::all();
+            $estantes = Estante::all();
 
-            return view('layouts.dashboard.addcaixa', ['caixas' => $caixas],['prateleiras' => $prateleiras]);
+            return view('layouts.dashboard.addcaixa', ['caixas' => $caixas],['prateleiras' => $prateleiras], ['estantes' => $estantes]);
         }
         return view('layouts.dashboard.index', ['msg' => "Você não possui acesso a área que tentou acessar."]);
     }

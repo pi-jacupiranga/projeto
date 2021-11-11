@@ -16,4 +16,14 @@ class Prateleira extends Model
         'prateleira_estante_id',
     ];
 
+
+    public function estante(){
+        return  $this->belongsTo('App\Models\Estante','prateleira_estante_id');
+    }
+
+    public function caixas(){
+        return $this->hasMany('App\Models\Caixa');
+    }
+
+
 }
