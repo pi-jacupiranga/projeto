@@ -15,11 +15,13 @@ use Illuminate\Http\Request;
 class CaixaController extends Controller
 {
     public function caixaPage(){
-        if(Auth::user()->is_admin == 1){
-
+        if(Auth::user()->is_admin == 1){ 
+            
+            $prateleiras = Prateleira::all();
             $caixas = Caixa::all();
+            $estantes = Estante::all();
 
-            return view('layouts.dashboard.caixas', ['caixas' => $caixas]);
+            return view('layouts.dashboard.caixas', ['caixas' => $caixas],['prateleiras' => $prateleiras], ['estantes' => $estantes]);
         }
         return view('layouts.dashboard.index', ['msg' => "Você não possui acesso a área que tentou acessar."]);
     }
@@ -43,12 +45,8 @@ class CaixaController extends Controller
             // SE VALIDOS 
                 $caixa = [];
 
-
-                
                 $caixa['caixa_numero'] = $request->caixa_numero;
                 $caixa['caixa_prateleira_id'] = $request->caixa_prateleira_id;
-
-
 
                 
                 if(Caixa::create($caixa)){

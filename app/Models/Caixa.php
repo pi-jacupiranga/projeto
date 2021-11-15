@@ -21,4 +21,8 @@ class Caixa extends Model
         return  $this->belongsTo('App\Models\Prateleira','caixa_prateleira_id');
     }
 
+    public function documentos(){
+        return $this->hasMany('App\Models\Documento');
+    }
+
 }
