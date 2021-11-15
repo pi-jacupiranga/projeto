@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Setor;
+use App\Models\Atribuicao;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -61,19 +62,41 @@ class UserController extends Controller
                 $user['cpf'] = $request->cpf;
                 $user['rg'] = $request->rg;
                 $user['cargo'] = $request->cargo;
-                $user['setor_id'] = $request->setor_id;
                 $user['data_admissao'] = $request->data_admissao;
                 $user['is_admin'] = $request->isadmin;
 
-                // TENTA ADICIONAR AO BANCO DE DADOS 
-                if(User::create($user)){
-                    // COM SUCESSO REDIRECIONA PARA LISTA DE USUÁRIOS 
-                    return redirect('/dashboard/users');
+                // TENTA ADICIONAR AO BANCO DE DADOS E SALVA DADOS IMPORTANTES EM VARIÁVEL
+                $user = User::create($user);
+
+                // SE USUÁRIO FOI CRIADO
+                if($user->exists){
+
+                    // atribui ao setor
+                    $atribuicao = [];
+                    $atribuicao['user_id'] = $user->id;
+                    $atribuicao['setor_id'] = $request->setor_id;
+
+                    if(Atribuicao::create($atribuicao)){
+
+                        // COM SUCESSO REDIRECIONA PARA LISTA DE USUÁRIOS 
+                        return redirect('/dashboard/users');
+                
+                    } else {
+
+                        // REDIRECIONAR COM ERRO: USUÁRIO CRIADO, NÃO ATRIBUÍDO A NENHUM SETOR
+
+                    }
+
+                    
                 } else {
-                    // CASO NÃO CONSIGA RETORNA MENSAGEM DE ERRO AO SALVAR NO BANCO DE DADOS
+
+                    // REDIRECIONAR COM ERRO: USUÁRIO NÃO CRIADO
+
                 }
 
-            // CASO HAJA ALGUM ERRO, DISPARAR MENSAGEM DE ERRO
+            // REDIRECIONAR COM ERRO: DADOS INVÁLIDOS, CHECAR CAMPOS NOVAMENTE
+        } else {
+            // REDIRECIONAR COM ERRO: NÃO POSSUI PRIVILÉGIOS ADMINISTRATIVOS
         }
     }
 }

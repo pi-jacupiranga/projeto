@@ -26,7 +26,6 @@ class User extends Authenticatable
         'rg',
         'cargo',
         'data_admissao',
-        'setor_id',
         'is_admin'
     ];
 

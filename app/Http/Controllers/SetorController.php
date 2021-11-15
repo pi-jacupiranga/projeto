@@ -37,7 +37,6 @@ class SetorController extends Controller
                 
                 $setor['setor_nome'] = $request->setor_nome;
                 $setor['setor_local'] = $request->setor_local;
-                $setor['setor_funcionario_responsavel_id'] = $request->setor_funcionario_responsavel_id;
                 
                 if(Setor::create($setor)){
                     // COM SUCESSO REDIRECIONA PARA LISTA DE SETORES

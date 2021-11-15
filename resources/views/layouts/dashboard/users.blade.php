@@ -18,7 +18,7 @@
 
                 <tr>
                     <th>Nome</th>
-                    <th>Setor</th>
+                    <th>Cargo</th>
                     <th>Ações</th>
                 </tr>
 
@@ -29,13 +29,7 @@
                 @foreach ($users as $user)
                     <tr>
                         <td>{{ $user->name }} {{ $user->surname }}</td>
-                        <td>
-                            @foreach ($setores as $setor)
-                                @if($setor->id == $user->setor_id)
-                                    {{ $setor->setor_nome }}
-                                @endif
-                            @endforeach    
-                        </td>
+                        <td> {{ $user->cargo }} </td>
                         <td></td>
                     </tr>    
 

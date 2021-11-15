@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Setor extends Model
+class Atribuicao extends Model
 {
     use HasFactory;
 
-    protected $table = 'setores';
+    protected $table = "atribuicoes";
 
     protected $fillable = [
-        'setor_nome',
-        'setor_local'
+        'user_id',
+        'setor_id',
     ];
 }

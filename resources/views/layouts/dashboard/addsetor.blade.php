@@ -19,15 +19,6 @@
                 <label for="setor_local">Local:</label>
                 <input type="text" class="form-control" name="setor_local" id="setor_local" placeholder="Digite o local do setor">
             </div>
-            <div class="form-group">
-                <label for="setor_funcionario_responsavel_id">Funcionário responsável:</label>
-                <select name="setor_funcionario_responsavel_id" id="setor_funcionario_responsavel_id" class="form-control">
-                    <option value="0">Nenhum</option>
-                    @foreach ($users as $user)
-                        <option value="{{ $user->id }}">{{ $user->name }} {{ $user->surname }}</option>
-                    @endforeach
-                </select>
-            </div>
             <div class="card-footer">
                 <button type="submit" class="btn btn-primary">Adicionar Setor</button>
             </div>

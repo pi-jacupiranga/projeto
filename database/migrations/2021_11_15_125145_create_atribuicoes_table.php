@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSetoresTable extends Migration
+class CreateAtribuicoesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateSetoresTable extends Migration
      */
     public function up()
     {
-        Schema::create('setores', function (Blueprint $table) {
+        Schema::create('atribuicoes', function (Blueprint $table) {
             $table->id();
-            $table->string('setor_nome');
-            $table->string('setor_local');
+            $table->foreignId('user_id')->references('id')->on('users');
+            $table->foreignId('setor_id')->references('id')->on('setores');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateSetoresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('setores');
+        Schema::dropIfExists('atribuicoes');
     }
 }

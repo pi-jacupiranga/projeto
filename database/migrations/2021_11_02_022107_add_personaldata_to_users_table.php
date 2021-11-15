@@ -20,7 +20,6 @@ class AddPersonaldataToUsersTable extends Migration
             $table->string('rg');
             $table->string('cargo');
             $table->string('data_admissao');
-            $table->integer('setor_id')->references('setor_id')->on('setor');
             $table->boolean('is_admin');
         });
     }
