@@ -381,6 +381,38 @@ return [
                         ],
                     ]
                 ],
+                [
+                    'text' => 'Legislação',
+                    'url'  => '#',
+                    'icon' => '',
+                    'can' => 'is-admin',
+                    'submenu' => [
+                        [
+                            'text' => 'Listar legislações',
+                            'url'  => 'dashboard/legislacoes',
+                        ],
+                        [
+                            'text' => 'Adicionar legislações',
+                            'url'  => 'dashboard/legislacoes/add',
+                        ],
+                    ]
+                ],
+                [
+                    'text' => 'Permissão',
+                    'url'  => '#',
+                    'icon' => '',
+                    'can' => 'is-admin',
+                    'submenu' => [
+                        [
+                            'text' => 'Listar permissões',
+                            'url'  => 'dashboard/permissoes',
+                        ],
+                        [
+                            'text' => 'Adicionar permissões',
+                            'url'  => 'dashboard/permissoes/add',
+                        ],
+                    ]
+                ],
             ],
         ],
         // ['header' => 'labels'],

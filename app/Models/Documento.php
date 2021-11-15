@@ -33,4 +33,8 @@ class Documento extends Model
     public function tipodoc(){
         return  $this->belongsTo('App\Models\TipoDoc','documento_tiposdoc_id');
     }
+    
+    public function permissoes(){
+        return $this->hasMany('App\Models\Permissao');
+    }
 }

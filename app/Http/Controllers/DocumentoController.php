@@ -33,7 +33,7 @@ class DocumentoController extends Controller
             $caixas = Caixa::all();
             $tiposdoc = TipoDoc::all();
 
-            return view('layouts.dashboard.adddocumentos', 
+            return view('layouts.dashboard.adddocumento', 
             ['documentos' => $documentos,
             'setores' => $setores,
             'caixas' => $caixas,

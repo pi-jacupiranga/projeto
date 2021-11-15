@@ -10,6 +10,9 @@ use App\Http\Controllers\PrateleiraController;
 use App\Http\Controllers\CaixaController;
 use App\Http\Controllers\TipoDocController;
 use App\Http\Controllers\DocumentoController;
+use App\Http\Controllers\LegislacaoController;
+use App\Http\Controllers\PermissaoController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -87,3 +90,19 @@ Route::get('/dashboard/documentos', [DocumentoController::class, 'documentoPage'
 Route::get('/dashboard/documentos/add', [DocumentoController::class, 'addDocumentoPage']);
 
 Route::post('/dashboard/documentos/add/do', [DocumentoController::class, 'addDocumento']);
+
+// ROTAS DASHBOARD - LEGISLAÇÔES
+
+Route::get('/dashboard/legislacoes', [LegislacaoController::class, 'legislacaoPage']);
+
+Route::get('/dashboard/legislacoes/add', [LegislacaoController::class, 'addLegislacaoPage']);
+
+Route::post('/dashboard/legislacoes/add/do', [LegislacaoController::class, 'addLegislacao']);
+
+// ROTAS DASHBOARD - PERMISSOES
+
+Route::get('/dashboard/permissoes', [PermissaoController::class, 'permissaoPage']);
+
+Route::get('/dashboard/permissoes/add', [PermissaoController::class, 'addPermissaoPage']);
+
+Route::post('/dashboard/permissoes/add/do', [PermissaoController::class, 'addPermissao']);
