@@ -349,6 +349,38 @@ return [
                         ],
                     ]
                 ],
+                [
+                    'text' => 'Tipos de Documentos',
+                    'url'  => '#',
+                    'icon' => '',
+                    'can' => 'is-admin',
+                    'submenu' => [
+                        [
+                            'text' => 'Listar tipos de documentos',
+                            'url'  => 'dashboard/tiposdoc',
+                        ],
+                        [
+                            'text' => 'Adicionar tipos de documentos',
+                            'url'  => 'dashboard/tiposdoc/add',
+                        ],
+                    ]
+                ],
+                [
+                    'text' => 'Documentos',
+                    'url'  => '#',
+                    'icon' => '',
+                    'can' => 'is-admin',
+                    'submenu' => [
+                        [
+                            'text' => 'Listar documentos',
+                            'url'  => 'dashboard/documentos',
+                        ],
+                        [
+                            'text' => 'Adicionar documentos',
+                            'url'  => 'dashboard/documentos/add',
+                        ],
+                    ]
+                ],
             ],
         ],
         // ['header' => 'labels'],
