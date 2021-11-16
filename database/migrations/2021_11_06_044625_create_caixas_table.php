@@ -17,7 +17,7 @@ class CreateCaixasTable extends Migration
             $table->id();
             $table->string('caixa_numero');
             $table->unsignedBigInteger('caixa_prateleira_id');
-            $table->foreign('caixa_prateleira_id')->references('id')->on('caixas');
+            $table->foreign('caixa_prateleira_id')->references('id')->on('prateleiras');
             $table->timestamps();
         });
     }

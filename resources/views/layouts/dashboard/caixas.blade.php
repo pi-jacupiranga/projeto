@@ -29,7 +29,14 @@
                 <tr>
                     <td>{{ $caixa->caixa_numero }}</td>
                     <td>{{ $caixa->prateleira->prateleira_numero }}</td>
-                    <td>{{ $caixa->estante->estante_numero }}</td>
+                    <!-- o foreach está repetindo conforme o número de prateleiras, depois temos que ver isso -->
+                    <td>
+                        @foreach ($prateleiras as $prateleira)
+                           @if( $prateleira->estante->id == $caixa->prateleira->prateleira_estante_id )
+                           {{ $prateleira->estante->estante_numero }}
+                           @endif
+                        @endforeach
+                        </td>
                     <td></td>
                 </tr>
                 

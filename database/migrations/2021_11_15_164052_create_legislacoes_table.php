@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTiposdocTable extends Migration
+class CreateLegislacoesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateTiposdocTable extends Migration
      */
     public function up()
     {
-        Schema::create('tiposdoc', function (Blueprint $table) {
+        Schema::create('legislacoes', function (Blueprint $table) {
             $table->id();
-            $table->string('tipodoc_nome');
+            $table->string('legislacao_nome');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateTiposdocTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tiposdoc');
+        Schema::dropIfExists('legislacoes');
     }
 }

@@ -21,7 +21,7 @@
                 <label for="caixa_prateleira_id">Prateleira:</label>
                 <select name="caixa_prateleira_id" id="caixa_prateleira_id" class="form-control">
                     @foreach ($prateleiras as $prateleira)
-                        <option value="{{ $prateleira->id }}">{{ $prateleira->prateleira_numero }} na Estante {{ $prateleira->estante->estante_numero }} </option>
+                        <option value="{{ $prateleira->id }}">{{ $prateleira->prateleira_numero }} na Estante {{  $prateleira->estante->estante_numero  }} </option>
                     @endforeach
                 </select>
             </div>

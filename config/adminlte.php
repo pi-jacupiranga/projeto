@@ -349,6 +349,70 @@ return [
                         ],
                     ]
                 ],
+                [
+                    'text' => 'Tipos de Documentos',
+                    'url'  => '#',
+                    'icon' => '',
+                    'can' => 'is-admin',
+                    'submenu' => [
+                        [
+                            'text' => 'Listar tipos de documentos',
+                            'url'  => 'dashboard/tiposdoc',
+                        ],
+                        [
+                            'text' => 'Adicionar tipos de documentos',
+                            'url'  => 'dashboard/tiposdoc/add',
+                        ],
+                    ]
+                ],
+                [
+                    'text' => 'Documentos',
+                    'url'  => '#',
+                    'icon' => '',
+                    'can' => 'is-admin',
+                    'submenu' => [
+                        [
+                            'text' => 'Listar documentos',
+                            'url'  => 'dashboard/documentos',
+                        ],
+                        [
+                            'text' => 'Adicionar documentos',
+                            'url'  => 'dashboard/documentos/add',
+                        ],
+                    ]
+                ],
+                [
+                    'text' => 'Legislação',
+                    'url'  => '#',
+                    'icon' => '',
+                    'can' => 'is-admin',
+                    'submenu' => [
+                        [
+                            'text' => 'Listar legislações',
+                            'url'  => 'dashboard/legislacoes',
+                        ],
+                        [
+                            'text' => 'Adicionar legislações',
+                            'url'  => 'dashboard/legislacoes/add',
+                        ],
+                    ]
+                ],
+                [
+                    'text' => 'Permissão',
+                    'url'  => '#',
+                    'icon' => '',
+                    'can' => 'is-admin',
+                    'submenu' => [
+                        [
+                            'text' => 'Listar permissões',
+                            'url'  => 'dashboard/permissoes',
+                        ],
+                        [
+                            'text' => 'Adicionar permissões',
+                            'url'  => 'dashboard/permissoes/add',
+                        ],
+                    ]
+                ],
             ],
         ],
         // ['header' => 'labels'],

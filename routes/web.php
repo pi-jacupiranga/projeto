@@ -8,6 +8,11 @@ use App\Http\Controllers\SetorController;
 use App\Http\Controllers\EstanteController;
 use App\Http\Controllers\PrateleiraController;
 use App\Http\Controllers\CaixaController;
+use App\Http\Controllers\TipoDocController;
+use App\Http\Controllers\DocumentoController;
+use App\Http\Controllers\LegislacaoController;
+use App\Http\Controllers\PermissaoController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -69,3 +74,35 @@ Route::get('/dashboard/caixas', [CaixaController::class, 'caixaPage']);
 Route::get('/dashboard/caixas/add', [CaixaController::class, 'addCaixaPage']);
 
 Route::post('/dashboard/caixas/add/do', [CaixaController::class, 'addCaixa']);
+
+// ROTAS DASHBOARD - TIPOS DE DOCUMENTOS
+
+Route::get('/dashboard/tiposdoc', [TipoDocController::class, 'tipodocPage']);
+
+Route::get('/dashboard/tiposdoc/add', [TipoDocController::class, 'addTipodocPage']);
+
+Route::post('/dashboard/tiposdoc/add/do', [TipoDocController::class, 'addTipodoc']);
+
+// ROTAS DASHBOARD - DOCUMENTOS
+
+Route::get('/dashboard/documentos', [DocumentoController::class, 'documentoPage']);
+
+Route::get('/dashboard/documentos/add', [DocumentoController::class, 'addDocumentoPage']);
+
+Route::post('/dashboard/documentos/add/do', [DocumentoController::class, 'addDocumento']);
+
+// ROTAS DASHBOARD - LEGISLAÇÔES
+
+Route::get('/dashboard/legislacoes', [LegislacaoController::class, 'legislacaoPage']);
+
+Route::get('/dashboard/legislacoes/add', [LegislacaoController::class, 'addLegislacaoPage']);
+
+Route::post('/dashboard/legislacoes/add/do', [LegislacaoController::class, 'addLegislacao']);
+
+// ROTAS DASHBOARD - PERMISSOES
+
+Route::get('/dashboard/permissoes', [PermissaoController::class, 'permissaoPage']);
+
+Route::get('/dashboard/permissoes/add', [PermissaoController::class, 'addPermissaoPage']);
+
+Route::post('/dashboard/permissoes/add/do', [PermissaoController::class, 'addPermissao']);

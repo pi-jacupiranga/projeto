@@ -5,18 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Setor extends Model
+class TipoDoc extends Model
 {
     use HasFactory;
-
-    protected $table = 'setores';
+    
+    protected $table = 'tiposdoc';
 
     protected $fillable = [
-        'setor_nome',
-        'setor_local'
+        'tipodoc_nome',
+        
     ];
 
     public function documentos(){
         return $this->hasMany('App\Models\Documento');
     }
+    
 }
