@@ -268,6 +268,7 @@ return [
         [
             'text'    => 'Cadastros',
             'icon'    => 'fas fa-fw fa-share',
+            'can' => 'is-admin',
             'submenu' => [
                 [
                     'text' => 'Usuários',
@@ -413,6 +414,30 @@ return [
                         ],
                     ]
                 ],
+            ],
+        ],
+        // -----------Campos permitidos para quem não for admin ------------
+
+        [
+            'text'    => 'Solicitações',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'Documentos',
+                    'url'  => '#',
+                    'icon' => false,
+                    'submenu' => [
+                        [
+                            'text' => 'Solicitar Documentos',
+                            'url'  => 'permissoes/solicitar',
+                        ],
+                        [
+                            'text' => 'Documentos Permitidos',
+                            'url'  => 'permissoes/xx',
+                        ],
+                    ]
+                ],
+               
             ],
         ],
         // ['header' => 'labels'],
