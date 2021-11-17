@@ -106,3 +106,9 @@ Route::get('/dashboard/permissoes', [PermissaoController::class, 'permissaoPage'
 Route::get('/dashboard/permissoes/add', [PermissaoController::class, 'addPermissaoPage']);
 
 Route::post('/dashboard/permissoes/add/do', [PermissaoController::class, 'addPermissao']);
+
+// ROTAS SOLICITAÇÕES USUARIOS 
+
+Route::get('/permissoes/solicitar', [PermissaoController::class, 'selecionarPermissaoPage']);
+
+Route::get('/permissoes/solicitar/{id}', [PermissaoController::class, 'solicitarPermissaoPage']);

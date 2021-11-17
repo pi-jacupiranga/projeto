@@ -65,4 +65,25 @@ class PermissaoController extends Controller
         }
         return view('layouts.dashboard.index', ['msg' => "Você não possui acesso a área que tentou acessar."]);
     }
+
+    //Página que usuário seleciona permissão
+    public function selecionarPermissaoPage(){
+        if(Auth::user()){
+
+            $documentos = Documento::all();
+
+            return view('layouts.permissoes.selecionar', ['documentos' => $documentos]);
+        }
+        return view('layouts.dashboard.index', ['msg' => "Você não possui acesso a área que tentou acessar."]);
+    }
+
+    public function solicitarPermissaoPage($id){
+        if(Auth::user()){
+
+            $documentos = Documento::findOrFail($id);
+
+            return view('layouts.permissoes.solicitar', ['documentos' => $documentos, 'id' => $id]);
+        }
+        return view('layouts.dashboard.index', ['msg' => "Você não possui acesso a área que tentou acessar."]);
+    }
 }
