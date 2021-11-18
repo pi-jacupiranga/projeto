@@ -433,11 +433,16 @@ return [
                         ],
                         [
                             'text' => 'Documentos Permitidos',
-                            'url'  => 'permissoes/xx',
+                            'url'  => 'permissoes/permitidas',
+                        ],
+                        [
+                            'text' => 'Documentos Negados',
+                            'url'  => 'permissoes/negadas',
                         ],
                         [
                             'text' => 'Solicitações Pendentes',
                             'url'  => 'permissoes/pendentes',
+                            'can' => 'is-admin',
                         ],
                     ]
                 ],
