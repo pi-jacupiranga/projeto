@@ -104,11 +104,20 @@ Route::post('/dashboard/legislacoes/add/do', [LegislacaoController::class, 'addL
 Route::get('/dashboard/permissoes', [PermissaoController::class, 'permissaoPage']);
 
 Route::get('/dashboard/permissoes/add', [PermissaoController::class, 'addPermissaoPage']);
-
+//Provavelmente remover essa rota
 Route::post('/dashboard/permissoes/add/do', [PermissaoController::class, 'addPermissao']);
 
 // ROTAS SOLICITAÇÕES USUARIOS 
 
 Route::get('/permissoes/solicitar', [PermissaoController::class, 'selecionarPermissaoPage']);
 
+Route::get('/permissoes/pendentes', [PermissaoController::class, 'pendentesPermissaoPage']);
+
 Route::get('/permissoes/solicitar/{id}', [PermissaoController::class, 'solicitarPermissaoPage']);
+
+Route::get('/permissoes/pendentes/{id}', [PermissaoController::class, 'decidirPermissaoPage']);
+
+Route::post('/permissoes/add/do', [PermissaoController::class, 'addPermissao']);
+
+Route::put('/permissoes/update/{id}', [PermissaoController::class, 'updatePermissao']);
+

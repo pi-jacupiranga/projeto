@@ -48,8 +48,9 @@
             <div class="form-group">
                 <label for="documento_caixa_id">Caixa:</label>
                 <select name="documento_caixa_id" id="documento_caixa_id" class="form-control">
+                    {{-- Falta conseguir colocar o número da estante baseado na prateleira --}}
                     @foreach ($caixas as $caixa)
-                        <option value="{{ $caixa->id }}">{{ $caixa->caixa_numero }} Na Prat x na Est x </option>
+                        <option value="{{ $caixa->id }}">{{ $caixa->caixa_numero }} Na Prat {{ $caixa->prateleira->prateleira_numero }}</option>
                     @endforeach
                 </select>
             </div>

@@ -17,7 +17,8 @@ class Permissao extends Model
         'permissao_permitido_em',
         'permissao_legislacao_id',
         'permissao_funcionario_id',
-        'permissao_documento_id'
+        'permissao_documento_id',
+        'permissao_status'
 
         
     ];

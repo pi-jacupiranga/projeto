@@ -44,20 +44,17 @@ class PermissaoController extends Controller
 
 
     public function addPermissao(Request $request){
-        if(Auth::user()->is_admin == 1){
+        if(Auth::user()){
             // VALIDA DADOS 
             // SE VALIDOS 
                 $permissao = [];
-                $permissao['permissao_tipo'] = $request->permissao_tipo;
-                $permissao['permissao_justificativa'] = $request->permissao_justificativa;
-                $permissao['permissao_permitido_em'] = $request->permissao_permitido_em;
-                $permissao['permissao_legislacao_id'] = $request->permissao_legislacao_id;
                 $permissao['permissao_funcionario_id'] = $request->permissao_funcionario_id;
                 $permissao['permissao_documento_id'] = $request->permissao_documento_id;
+                $permissao['permissao_status'] = $request->permissao_status;
                 
                 if(Permissao::create($permissao)){
                     // COM SUCESSO REDIRECIONA PARA LISTA DE ESTANTES
-                    return redirect('/dashboard/permissoes');
+                    return view('layouts.dashboard.index', ['msg' => "Permissão Solicitada."]);
                 } else {
                     // CASO NÃO CONSIGA RETORNA MENSAGEM DE ERRO AO SALVAR NO BANCO DE DADOS
                 }
@@ -85,5 +82,38 @@ class PermissaoController extends Controller
             return view('layouts.permissoes.solicitar', ['documentos' => $documentos, 'id' => $id]);
         }
         return view('layouts.dashboard.index', ['msg' => "Você não possui acesso a área que tentou acessar."]);
+    }
+
+    public function pendentesPermissaoPage(){
+        if(Auth::user()->is_admin == 1){
+
+            $permissoes = Permissao::all();
+
+            return view('layouts.permissoes.pendentes', ['permissoes' => $permissoes]);
+        }
+        return view('layouts.dashboard.index', ['msg' => "Você não possui acesso a área que tentou acessar."]);
+    }
+
+    public function decidirPermissaoPage($id){
+        if(Auth::user()->is_admin == 1){
+
+            $permissao = Permissao::findOrFail($id);
+            $legislacoes = Legislacao::all();
+
+            return view('layouts.permissoes.decidir', 
+            [
+            'permissao' => $permissao,
+            'id' => $id,
+            'legislacoes' => $legislacoes,
+            ]);
+        }
+        return view('layouts.dashboard.index', ['msg' => "Você não possui acesso a área que tentou acessar."]);
+    }
+
+    public function updatePermissao(Request $request){
+
+        Permissao::findOrFail($request->id)->update($request->all());
+
+        return view('layouts.dashboard.index', ['msg' => "Permissão Solicitada."]);
     }
 }

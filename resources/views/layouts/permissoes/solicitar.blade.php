@@ -8,23 +8,30 @@
 
 @section('content')
 
-    <form action="#" method="POST">
+    <form action="/permissoes/add/do" method="POST">  
         @csrf
         <div class="card-body">
             <div class="form-group">
                 <label for="documento_nome">Nome do Documento:</label>
-                <input type="text" class="form-control" name="documento_nome" id="documento_nome" value="{{ $documentos->documento_nome }}" disabled>
+                <input type="text" class="form-control" value="{{ $documentos->documento_nome }}" disabled>
             </div>
             <div class="form-group">
                 <label for="tipodoc_nome">Tipo do Documento:</label>
-                <input type="text" class="form-control" name="tipodoc_nome" id="tipodoc_nome" value="{{ $documentos->tipodoc->tipodoc_nome }}" disabled>
+                <input type="text" class="form-control" value="{{ $documentos->tipodoc->tipodoc_nome }}" disabled>
             </div>
             <div class="form-group">
                 <label for="setor_nome">Setor do Documento:</label>
-                <input type="text" class="form-control" name="setor_nome" id="setor_nome" value="{{ $documentos->setor->setor_nome }}" disabled>
+                <input type="text" class="form-control" value="{{ $documentos->setor->setor_nome }}" disabled>
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">xxx</button>
+            
+            <input type="hidden" name="permissao_funcionario_id" id="permissao_funcionario_id" value="{{ Auth::user()->id }}">
+            <input type="hidden" name="permissao_documento_id" id="permissao_documento_id" value="{{ $documentos->id }}">
+            <input type="hidden" name="permissao_status" id="permissao_status" value="0">
+
+
+
+                <button type="submit" class="btn btn-primary">Solicitar</button>
             </div>
         </div>
     </form>

@@ -435,6 +435,10 @@ return [
                             'text' => 'Documentos Permitidos',
                             'url'  => 'permissoes/xx',
                         ],
+                        [
+                            'text' => 'Solicitações Pendentes',
+                            'url'  => 'permissoes/pendentes',
+                        ],
                     ]
                 ],
                
