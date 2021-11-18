@@ -7,6 +7,8 @@ use App\Models\Documento;
 use App\Models\TipoDoc;
 use App\Models\Setor;
 use App\Models\Caixa;
+use App\Models\Estante;
+use App\Models\Prateleira;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -32,12 +34,16 @@ class DocumentoController extends Controller
             $setores = Setor::all();
             $caixas = Caixa::all();
             $tiposdoc = TipoDoc::all();
+            $estantes = Estante::all();
+            $prateleiras = Prateleira::all();
 
             return view('layouts.dashboard.adddocumento', 
             ['documentos' => $documentos,
             'setores' => $setores,
             'caixas' => $caixas,
-            'tiposdoc' => $tiposdoc
+            'tiposdoc' => $tiposdoc,
+            'estantes' => $estantes,
+            'prateleiras' => $prateleiras,
             ]);
         }
         return view('layouts.dashboard.index', ['msg' => "Você não possui acesso a área que tentou acessar."]);
