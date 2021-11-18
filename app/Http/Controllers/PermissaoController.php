@@ -111,9 +111,27 @@ class PermissaoController extends Controller
     }
 
     public function updatePermissao(Request $request){
+        if(Auth::user()->is_admin == 1){
 
-        Permissao::findOrFail($request->id)->update($request->all());
+            Permissao::findOrFail($request->id)->update([
+                "permissao_tipo" => $request['permissao_tipo'],
+                "permissao_justificativa" => $request['permissao_justificativa']
+            ]);
 
-        return view('layouts.dashboard.index', ['msg' => "Permissão Solicitada."]);
+            if($request['permissao_tipo'] == "Aprovado"){
+                
+                Permissao::findOrFail($request->id)->update([
+                    "permissao_status" => 0
+                ]);
+
+                return view('layouts.dashboard.index', ['msg' => "Permissão autorizada."]);
+
+            } 
+            
+            return view('layouts.dashboard.index', ['msg' => "Permissão negada."]);
+        
+        }
+        
+        return view('layouts.dashboard.index', ['msg' => "Você não possui privilégios administrativos."]);
     }
 }

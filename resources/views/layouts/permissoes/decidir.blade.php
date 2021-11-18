@@ -47,7 +47,6 @@
                     </select>
             </div>
 
-            <input type="hidden" name="permissao_status" id="permissao_status" value="1">
             <div class="card-footer">
                 <button type="submit" class="btn btn-primary">Salvar</button>
             </div>
