@@ -139,7 +139,6 @@ class PermissaoController extends Controller
     }
 
     public function verNegadasPage(){
-        $permissoes = Permissao::all();
         return view('layouts.permissoes.negadas', ['permissoes' => Permissao::where('permissao_tipo', 'Negado')->where('permissao_status', '1')->orderBy('id', 'DESC')->paginate(10)]);
     }
 }
