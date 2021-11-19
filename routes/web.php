@@ -105,3 +105,6 @@ Route::post('/permissoes/add/do', [PermissaoController::class, 'addPermissao']);
 
 Route::put('/permissoes/update/{id}', [PermissaoController::class, 'updatePermissao']);
 
+Route::get('/permissoes/permitidas', [PermissaoController::class, 'verPermitidasPage']);
+
+Route::get('/permissoes/negadas', [PermissaoController::class, 'verNegadasPage']);
