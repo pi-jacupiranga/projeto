@@ -1,13 +1,13 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Gestão do Arquivo Municipal')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Documentos</h1>
 @stop
 
 @section('content')
-    <h2>Documento</h2>
+    <h2>Documentos cadastrados</h2>
 
     <table class="table">
 
@@ -29,9 +29,9 @@
 
                 <tr>
                     <td>{{ $documento->documento_nome }}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ $documento->setor->setor_nome }}</td>
+                    <td>{{ $documento->caixa->caixa_numero }}</td>
+                    <td>{{ $documento->tipodoc->tipodoc_nome }}</td>
                     <td></td>
                 </tr>
                 

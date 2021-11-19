@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Gestão do Arquivo Municipal')
 
 @section('content_header')
-    <h1>Prateleira</h1>
+    <h1>Documentos</h1>
 @stop
 
 @section('content')
@@ -50,7 +50,7 @@
                 <select name="documento_caixa_id" id="documento_caixa_id" class="form-control">
                     {{-- Falta conseguir colocar o número da estante baseado na prateleira --}}
                     @foreach ($caixas as $caixa)
-                        <option value="{{ $caixa->id }}">{{ $caixa->caixa_numero }} Na Prat {{ $caixa->prateleira->prateleira_numero }}</option>
+                        <option value="{{ $caixa->id }}">{{ $caixa->caixa_numero }} Na Prateleira {{ $caixa->prateleira->prateleira_numero }}</option>
                     @endforeach
                 </select>
             </div>

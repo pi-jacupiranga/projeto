@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Gestão do Arquivo Municipal')
 
 @section('content_header')
     <h1>Estantes</h1>

@@ -13,18 +13,6 @@ use App\Http\Controllers\DocumentoController;
 use App\Http\Controllers\LegislacaoController;
 use App\Http\Controllers\PermissaoController;
 
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Auth::routes(['register' => false]);
 
 Route::get('/', function () {
@@ -102,10 +90,6 @@ Route::post('/dashboard/legislacoes/add/do', [LegislacaoController::class, 'addL
 // ROTAS DASHBOARD - PERMISSOES
 
 Route::get('/dashboard/permissoes', [PermissaoController::class, 'permissaoPage']);
-
-Route::get('/dashboard/permissoes/add', [PermissaoController::class, 'addPermissaoPage']);
-//Provavelmente remover essa rota
-Route::post('/dashboard/permissoes/add/do', [PermissaoController::class, 'addPermissao']);
 
 // ROTAS SOLICITAÇÕES USUARIOS 
 

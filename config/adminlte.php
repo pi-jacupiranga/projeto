@@ -408,10 +408,6 @@ return [
                             'text' => 'Listar permissões',
                             'url'  => 'dashboard/permissoes',
                         ],
-                        [
-                            'text' => 'Adicionar permissões',
-                            'url'  => 'dashboard/permissoes/add',
-                        ],
                     ]
                 ],
             ],

@@ -87,7 +87,7 @@ class PermissaoController extends Controller
     public function pendentesPermissaoPage(){
         if(Auth::user()->is_admin == 1){
 
-            $permissoes = Permissao::all();
+            $permissoes = Permissao::where('permissao_status', '=', 0)->get();
 
             return view('layouts.permissoes.pendentes', ['permissoes' => $permissoes]);
         }
@@ -121,7 +121,7 @@ class PermissaoController extends Controller
             if($request['permissao_tipo'] == "Aprovado"){
                 
                 Permissao::findOrFail($request->id)->update([
-                    "permissao_status" => 0
+                    "permissao_status" => 1
                 ]);
 
                 return view('layouts.dashboard.index', ['msg' => "Permissão autorizada."]);

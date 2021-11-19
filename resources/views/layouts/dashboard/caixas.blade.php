@@ -1,13 +1,13 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Gestão do Arquivo Municipal')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Caixas</h1>
 @stop
 
 @section('content')
-    <h2>Caixa</h2>
+    <h2>Caixas cadastradas</h2>
 
     <table class="table">
 
@@ -16,7 +16,6 @@
             <tr>
                 <th>Número</th>
                 <th>Prateleira<th>
-                <th>Estante</th>
                 <th>Ações</th>
             </tr>
 
@@ -29,14 +28,6 @@
                 <tr>
                     <td>{{ $caixa->caixa_numero }}</td>
                     <td>{{ $caixa->prateleira->prateleira_numero }}</td>
-                    <!-- o foreach está repetindo conforme o número de prateleiras, depois temos que ver isso -->
-                    <td>
-                        @foreach ($prateleiras as $prateleira)
-                           @if( $prateleira->estante->id == $caixa->prateleira->prateleira_estante_id )
-                           {{ $prateleira->estante->estante_numero }}
-                           @endif
-                        @endforeach
-                        </td>
                     <td></td>
                 </tr>
                 

@@ -1,13 +1,13 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Gestão do Arquivo Municipal')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Setores</h1>
 @stop
 
 @section('content')
-    <h2>Setores</h2>
+    <h2>Setores cadastrados</h2>
 
     <table class="table">
 

@@ -1,13 +1,13 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Gestão do Arquivo Municipal')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Permissões</h1>
 @stop
 
 @section('content')
-    <h2>Documento</h2>
+    <h2>Permissões cadastradas</h2>
 
     <table class="table">
 
@@ -27,7 +27,7 @@
 
                 <tr>
                     <td>{{ $permissao->permissao_tipo }}</td>
-                    <td></td>
+                    <td>{{ $permissao->documento->documento_nome }}</td>
                     <td></td>
                 </tr>
                 
