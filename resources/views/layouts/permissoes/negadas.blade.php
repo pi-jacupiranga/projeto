@@ -8,7 +8,21 @@
 
 @section('content')
 
+    @foreach ($permissoes as $permissao)
 
+        @if ($permissao->permissao_funcionario_id == Auth::user()->id)
+
+            <h1>Documento {{ $permissao->permissao_documento_id }} negado!</h1>
+            <h2>Motivo: {{ $permissao->permissao_justificativa }}</h2>
+            
+        @endif
+        
+    @endforeach
+
+
+    <div class="d-flex justify-content-center">
+        {{ $permissoes->links() }}
+    </div>
 
 @stop
 

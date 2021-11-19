@@ -8,7 +8,19 @@
 
 @section('content')
 
+    @foreach ($permissoes as $permissao)
 
+        @if ($permissao->permissao_funcionario_id == Auth::user()->id)
+
+            <h1>Documento {{ $permissao->permissao_documento_id }} aprovado!</h1>
+            
+        @endif
+        
+    @endforeach
+
+    <div class="d-flex justify-content-center">
+        {{ $permissoes->links() }}
+    </div>
 
 @stop
 
