@@ -11,6 +11,10 @@
     @can('is-admin')
       
         <h2>Usuários cadastrados</h2>
+
+        @if(isset($msg))
+            <p class="msg">{{$msg}}</p>
+        @endif
         
         <table class="table">
 
@@ -30,7 +34,13 @@
                     <tr>
                         <td>{{ $user->name }} {{ $user->surname }}</td>
                         <td> {{ $user->cargo }} </td>
-                        <td></td>
+                        <td>
+                            <form action="./users/delete/{{ $user->id }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger delete-btn">Deletar usuário</button>
+                            </form>
+                        </td>
                     </tr>    
 
                 @endforeach

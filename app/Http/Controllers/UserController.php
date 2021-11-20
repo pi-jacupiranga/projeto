@@ -99,4 +99,42 @@ class UserController extends Controller
             // REDIRECIONAR COM ERRO: NÃO POSSUI PRIVILÉGIOS ADMINISTRATIVOS
         }
     }
+
+    public function destroyUser($id){
+        // VERIFICA SE USUÁRIO TEM PRIVILÉGIOS ADMINISTRATIVOS
+        if(Auth::user()->is_admin == 1){
+
+            foreach(Atribuicao::all() as $atribuicao){
+
+                if($atribuicao->user_id == $id){
+
+                    if(Atribuicao::findOrFail($atribuicao->id)->delete()){
+
+                        // TENTA REMOVER DO BANCO DE DADOS
+                        if(User::findOrFail($id)->delete()){
+
+                            // REDIRECIONA COM SUCESSO
+                            return redirect('/dashboard/users')->with('msg', 'Usuário removido com sucesso');
+
+                        } else {
+
+                            // REDIRECIONA COM ERRO: ERRO AO APAGAR USUÁRIO DO BANCO DE DADOS
+
+                        }
+
+                    } else {
+
+                        // REDIRECIONA COM ERRO: ERRO AO APAGAR ATRIBUIÇÃO DO BANCO DE DADOS
+
+                    }
+
+                }
+
+            }
+            
+        } else {
+            // REDIRECIONA COM ERRO: NÃO POSSUI PRIVILÉGIOS ADMINISTRATIVOS
+        }
+        
+    }
 }

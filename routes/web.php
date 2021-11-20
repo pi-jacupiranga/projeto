@@ -29,6 +29,8 @@ Route::get('/dashboard/users', [UserController::class, 'userList']);
 
 Route::get('/dashboard/users/add', [UserController::class, 'addUserPage']);
 
+Route::delete('/dashboard/users/delete/{id}',[UserController::class, 'destroyUser']);
+
 Route::post('/dashboard/users/add/do', [UserController::class, 'addUser']); 
 
 // ROTAS DASHBOARD - SETORES
